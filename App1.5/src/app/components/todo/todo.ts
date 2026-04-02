@@ -4,7 +4,7 @@ import { Router, RouterModule } from '@angular/router';
 import { TareasService } from '../../services/tareas.service';
 import { Tarea } from '../../models/tarea.model';
 import { firstValueFrom } from 'rxjs';
-import { TodoListComponent } from '../todo-list/todo-list';
+import { TodoListComponent } from '../todo-list/todo-list';    //comentario
 import { FormsModule } from '@angular/forms';
 
 @Component({
