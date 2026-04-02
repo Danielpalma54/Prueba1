@@ -19,7 +19,9 @@ namespace TareasApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Tarea>>> Get()
         {
+
             return await _context.Tareas
+            .Where(t => t.Activa)
             .OrderBy(t => t.Id)
             .ToListAsync();
         }
@@ -49,8 +51,8 @@ namespace TareasApi.Controllers
             var tarea = await _context.Tareas.FindAsync(id);
             if (tarea == null) return NotFound();
 
-            _context.Tareas.Remove(tarea);
-            await _context.SaveChangesAsync();
+            tarea.Activa = false;  //vuelve acti
+            await _context.SaveChangesAsync();  
 
             return NoContent();
         }
