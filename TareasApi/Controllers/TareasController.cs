@@ -21,7 +21,7 @@ namespace TareasApi.Controllers
         {
 
             return await _context.Tareas
-            .Where(t => t.Activa)
+            .Where(t => t.Activa) //MUESTRA TAREAS ACTIVAS
             .OrderBy(t => t.Id)
             .ToListAsync();
         }
